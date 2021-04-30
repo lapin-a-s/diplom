@@ -1,0 +1,30 @@
+.input-group{
+    width: 500px;
+    margin: 0px 0 0 400px;
+    position: absolute;
+}
+.display-6{
+    position: absolute;
+    margin: 0px 0 0 300px;
+}
+#infopanel
+{
+    position: absolute;
+    margin: 100px
+}
+#Linkss
+{
+    position: absolute;
+    left: 0%;
+    margin: 100px 200px -300px 900px
+}
+#Whois
+{
+    margin: 600px 0 0 200px;
+    position: absolute;
+
+}
+#pdf{
+    position: absolute;
+   left:50%;
+}
