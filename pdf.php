@@ -38,48 +38,7 @@ if ($stringtitle < 30 || $stringtitle > 65) {
     $countError++;
 }
 $h1 = $data['h1'];
-$entry = $doc->find('h1');
-$Counth1 = 0;
-foreach ($entry as $row) {
-    $data['H1'][] = pq($row)->find('h1');
-    $Counth1++;
-}
-if ($Counth1 > 1) {
-    $countError++;
-}
-$entry = $doc->find('h2');
-$Counth2 = 0;
-foreach ($entry as $row) {
-    $data['H2'][] = pq($row)->find('h2');
-    $Counth2++;
-}
-if ($Counth2 == 0) {
-    $countError++;
-}
-$entry = $doc->find('h3');
-$Counth3 = 0;
-foreach ($entry as $row) {
-    $data['H3'][] = pq($row)->find('h3');
-    $Counth3++;
-}
-$entry = $doc->find('h4');
-$Counth4 = 0;
-foreach ($entry as $row) {
-    $data['H4'][] = pq($row)->find('h4');
-    $Counth4++;
-}
-$entry = $doc->find('h5');
-$Counth5 = 0;
-foreach ($entry as $row) {
-    $data['H5'][] = pq($row)->find('h5');
-    $Counth5++;
-}
-$entry = $doc->find('h6');
-$Counth6 = 0;
-foreach ($entry as $row) {
-    $data['H6'][] = pq($row)->find('h6');
-    $Counth6++;
-}
+
 $entry = $doc->find('a');
 foreach ($entry as $row) {
     $data['a'][] = pq($row)->attr('rel');
@@ -201,13 +160,13 @@ $tableBorderColour = array(50, 50, 50);
 $tableRowFillColour = array(213, 170, 170);
 $reportName = "Анализируемый сайт: " . $title;
 $reportNameYPos = 10;
-$logoFile = "photo/photo_fone.jpg";
+$logoFile = "photo/brand.png";
 $logoXPos = 50;
 $logoYPos = 38;
 $logoWidth = 110;
 $columnLabels = array("Количество");
-$dataRows = array($countError, $validedocument, $countall, $Counth1);
-$rowLabels = array("Количество технических ошибок", "Количество ошибок валидации", "Количество ссылок", "Количество заголовков h1");
+$dataRows = array($countError, $validedocument, $countall, $Countnore);
+$rowLabels = array("Количество технических ошибок", "Количество ошибок валидации", "Количество ссылок", "Количество noreffer");
 $counlinkss = array("Уникальных", "Css");
 $chartXPos = 20;
 $chartYPos = 250;
@@ -277,8 +236,6 @@ foreach ($arraywhois as $key => $value) {
     ";
     $pdf->Write(6, $whois);
 }
-
     ob_end_clean();
     $pdf->Output('test.pdf');
-
 ?>
