@@ -32,7 +32,11 @@ $_SESSION['description']= "";
 $_SESSION['ref'] = "";
 require_once 'phpQuery/phpQuery/phpQuery.php';
 if (!isset($_POST['Url-link'])|| empty($_POST['Url-link'])){die('Введите ссылку');}
-
+ $links = $_POST['Url-link'];
+ if (!file_exists($links))
+  {
+     die('неверная ссылка');
+ }
 class errors{
     public $countError;
     public $listerror = array();
@@ -52,8 +56,6 @@ public function getCountError()
 }
 $ClassErors = new errors();
 
-//if (!empty($_POST['linkforanalis']))
-    $links = $_POST['Url-link'];
  if (filter_var($links, FILTER_VALIDATE_URL) === FALSE) {
      die('Введите ссылку');
  }
